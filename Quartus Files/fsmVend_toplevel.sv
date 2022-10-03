@@ -1,6 +1,6 @@
 module fsmVend_toplevel(
 	input logic key_CLK, CLK,
-	output logic led_0
+	output logic led_0 //temp output
 );
 
 	logic A_clean;
