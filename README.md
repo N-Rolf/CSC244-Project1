@@ -1,2 +1,2 @@
 # CSC244-Project1
-15 Cent Vending Machine
+75 Cent Vending Machine
