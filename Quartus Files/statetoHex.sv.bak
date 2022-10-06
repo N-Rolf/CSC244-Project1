@@ -1,0 +1,8 @@
+module statetoHex (
+	input logic
+	output logic
+);
+
+
+
+endmodule
