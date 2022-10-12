@@ -1,6 +1,6 @@
 module guffinOut_logic (
-	input logic
-	output logic
+	input logic in_temp,
+	output logic out_temp
 );
 
 
