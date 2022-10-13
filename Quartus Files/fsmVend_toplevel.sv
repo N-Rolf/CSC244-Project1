@@ -23,8 +23,10 @@ module fsmVend_toplevel(
 	
 	//nextState Logic -> 4:8 decoder
 	//decoder_48 decode (.dec0(), .dec1(), .dec2(), .dec3(), .dec4(), .dec_out0(dec_NS[0]), .dec_out1(dec_NS[1]), .dec_out2(dec_NS[2]), .dec_out3(dec_NS[3]), .dec_out4(dec_NS[4]), .dec_out5(dec_NS[5]), .dec_out6(dec_NS[6]));
+	
 	//4:8 decoder -> register
 	//state_register state_reg (.CLK(CLK_clean), .D0(dec_NS[0]), .D1(dec_NS[1]), .D2(dec_NS[2]), .D3(dec_NS[3]), .D4(dec_NS[4]), .D5(dec_NS[5]), .D6(dec_NS[6]));
+	
 	//register -> output logic
 	//guffinOut_logic output ();
 	//register -> HEX logic STATE
