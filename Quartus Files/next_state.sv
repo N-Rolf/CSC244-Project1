@@ -22,6 +22,6 @@ module next_state(
     or (nextState_2, and2_1, and2_2);
 
     //Q3
-    nextState_3 = 0;
+    assign nextState_3 = 0;
 
 endmodule

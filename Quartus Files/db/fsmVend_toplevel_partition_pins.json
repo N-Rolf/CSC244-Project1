@@ -2,7 +2,40 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : []
+			"pins" : [
+				{
+					"name" : "state_x",
+					"strict" : false
+				},
+				{
+					"name" : "state_y",
+					"strict" : false
+				},
+				{
+					"name" : "debug_0",
+					"strict" : false
+				},
+				{
+					"name" : "debug_1",
+					"strict" : false
+				},
+				{
+					"name" : "debug_2",
+					"strict" : false
+				},
+				{
+					"name" : "quarter_in",
+					"strict" : false
+				},
+				{
+					"name" : "dollar_in",
+					"strict" : false
+				},
+				{
+					"name" : "halfDollar_in",
+					"strict" : false
+				}
+			]
 		}
 	]
 }
