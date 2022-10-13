@@ -1,6 +1,6 @@
 Analysis & Synthesis report for fsmVend_toplevel
-Wed Oct 12 09:34:29 2022
-Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+Thu Oct 13 08:56:42 2022
+Quartus Prime Version 21.1.1 Build 850 06/23/2022 Patches 1.02i SJ Lite Edition
 
 
 ---------------------
@@ -15,10 +15,11 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
   9. Parameter Settings for User Entity Instance: debouncer:clean
- 10. Port Connectivity Checks: "debouncer:clean"
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+ 10. Port Connectivity Checks: "statetoHex:stateHex"
+ 11. Port Connectivity Checks: "debouncer:clean"
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -42,26 +43,26 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
-+------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Oct 12 09:34:29 2022       ;
-; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
-; Revision Name                      ; fsmVend_toplevel                            ;
-; Top-level Entity Name              ; fsmVend_toplevel                            ;
-; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 0                                           ;
-;     Total combinational functions  ; 0                                           ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 11                                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
-; UFM blocks                         ; 0                                           ;
-; ADC blocks                         ; 0                                           ;
-+------------------------------------+---------------------------------------------+
++------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                                   ;
++------------------------------------+-----------------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Oct 13 08:56:42 2022                     ;
+; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 Patches 1.02i SJ Lite Edition ;
+; Revision Name                      ; fsmVend_toplevel                                          ;
+; Top-level Entity Name              ; fsmVend_toplevel                                          ;
+; Family                             ; MAX 10                                                    ;
+; Total logic elements               ; 0                                                         ;
+;     Total combinational functions  ; 0                                                         ;
+;     Dedicated logic registers      ; 0                                                         ;
+; Total registers                    ; 0                                                         ;
+; Total pins                         ; 59                                                        ;
+; Total virtual pins                 ; 0                                                         ;
+; Total memory bits                  ; 0                                                         ;
+; Embedded Multiplier 9-bit elements ; 0                                                         ;
+; Total PLLs                         ; 0                                                         ;
+; UFM blocks                         ; 0                                                         ;
+; ADC blocks                         ; 0                                                         ;
++------------------------------------+-----------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------+
@@ -155,8 +156,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -166,14 +167,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                           ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                       ; Library ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
-; fsmVend_toplevel.sv              ; yes             ; User SystemVerilog HDL File  ; C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/fsmVend_toplevel.sv ;         ;
-; debouncer.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/debouncer.sv        ;         ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                           ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                       ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+---------+
+; fsmVend_toplevel.sv              ; yes             ; User SystemVerilog HDL File  ; C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv ;         ;
+; debouncer.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/neilr/Desktop/Project_1/Quartus Files/debouncer.sv        ;         ;
+; statetoHex.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/neilr/Desktop/Project_1/Quartus Files/statetoHex.sv       ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+---------+
 
 
 +-------------------------------------------------------+
@@ -196,13 +198,13 @@ https://fpgasoftware.intel.com/eula.
 ;     -- Dedicated logic registers            ; 0       ;
 ;     -- I/O registers                        ; 0       ;
 ;                                             ;         ;
-; I/O pins                                    ; 11      ;
+; I/O pins                                    ; 59      ;
 ;                                             ;         ;
 ; Embedded Multiplier 9-bit elements          ; 0       ;
 ;                                             ;         ;
 ; Maximum fan-out node                        ; key_CLK ;
 ; Maximum fan-out                             ; 1       ;
-; Total fan-out                               ; 11      ;
+; Total fan-out                               ; 59      ;
 ; Average fan-out                             ; 0.50    ;
 +---------------------------------------------+---------+
 
@@ -212,7 +214,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+------------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name      ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+------------------+--------------+
-; |fsmVend_toplevel          ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 11   ; 0            ; 0          ; |fsmVend_toplevel   ; fsmVend_toplevel ; work         ;
+; |fsmVend_toplevel          ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 59   ; 0            ; 0          ; |fsmVend_toplevel   ; fsmVend_toplevel ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -242,6 +244,38 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "statetoHex:stateHex"                                                                  ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; hex0_0 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hex0_1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hex0_2 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hex0_3 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hex1_0 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hex1_1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hex1_2 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hex1_3 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hex2_0 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hex2_1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hex2_2 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hex2_3 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hex3_0 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hex3_1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hex3_2 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hex3_3 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hex4_0 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hex4_1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hex4_2 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hex4_3 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hex5_0 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hex5_1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hex5_2 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; hex5_3 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +----------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "debouncer:clean"                                                                    ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -256,7 +290,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 11                          ;
+; boundary_port         ; 59                          ;
 ; cycloneiii_lcell_comb ; 1                           ;
 ;     normal            ; 1                           ;
 ;         0 data inputs ; 1                           ;
@@ -280,67 +314,172 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Wed Oct 12 09:34:15 2022
+    Info: Version 21.1.1 Build 850 06/23/2022 Patches 1.02i SJ Lite Edition
+    Info: Processing started: Thu Oct 13 08:56:36 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fsmVend_toplevel -c fsmVend_toplevel
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Warning (10275): Verilog HDL Module Instantiation warning at fsmVend_toplevel.sv(44): ignored dangling comma in List of Port Connections File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 44
 Info (12021): Found 1 design units, including 1 entities, in source file fsmvend_toplevel.sv
-    Info (12023): Found entity 1: fsmVend_toplevel File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/fsmVend_toplevel.sv Line: 1
+    Info (12023): Found entity 1: fsmVend_toplevel File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file debouncer.sv
-    Info (12023): Found entity 1: debouncer File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/debouncer.sv Line: 15
+    Info (12023): Found entity 1: debouncer File: C:/Users/neilr/Desktop/Project_1/Quartus Files/debouncer.sv Line: 15
 Info (12021): Found 1 design units, including 1 entities, in source file d_ff.sv
-    Info (12023): Found entity 1: d_ff File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/d_ff.sv Line: 1
+    Info (12023): Found entity 1: d_ff File: C:/Users/neilr/Desktop/Project_1/Quartus Files/d_ff.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file encoder_42.sv
-    Info (12023): Found entity 1: encoder_42 File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/encoder_42.sv Line: 1
+    Info (12023): Found entity 1: encoder_42 File: C:/Users/neilr/Desktop/Project_1/Quartus Files/encoder_42.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file sev_seg.sv
-    Info (12023): Found entity 1: sev_seg File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/sev_seg.sv Line: 1
+    Info (12023): Found entity 1: sev_seg File: C:/Users/neilr/Desktop/Project_1/Quartus Files/sev_seg.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file state_register.sv
-    Info (12023): Found entity 1: state_register File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/state_register.sv Line: 1
+    Info (12023): Found entity 1: state_register File: C:/Users/neilr/Desktop/Project_1/Quartus Files/state_register.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file decoder_48.sv
-    Info (12023): Found entity 1: decoder_48 File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/decoder_48.sv Line: 1
+    Info (12023): Found entity 1: decoder_48 File: C:/Users/neilr/Desktop/Project_1/Quartus Files/decoder_48.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file statetohex.sv
-    Info (12023): Found entity 1: statetoHex File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/statetoHex.sv Line: 1
+    Info (12023): Found entity 1: statetoHex File: C:/Users/neilr/Desktop/Project_1/Quartus Files/statetoHex.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file changetohex.sv
-    Info (12023): Found entity 1: changetoHex File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/changetoHex.sv Line: 1
+    Info (12023): Found entity 1: changetoHex File: C:/Users/neilr/Desktop/Project_1/Quartus Files/changetoHex.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file guffinout_logic.sv
-    Info (12023): Found entity 1: guffinOut_logic File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/guffinOut_logic.sv Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at d_ff.sv(8): created implicit net for "dff_nCLK" File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/d_ff.sv Line: 8
-Warning (10236): Verilog HDL Implicit Net warning at d_ff.sv(11): created implicit net for "debug" File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/d_ff.sv Line: 11
-Warning (10236): Verilog HDL Implicit Net warning at decoder_48.sv(6): created implicit net for "ndec0" File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/decoder_48.sv Line: 6
-Warning (10236): Verilog HDL Implicit Net warning at decoder_48.sv(7): created implicit net for "ndec1" File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/decoder_48.sv Line: 7
-Warning (10236): Verilog HDL Implicit Net warning at decoder_48.sv(8): created implicit net for "ndec2" File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/decoder_48.sv Line: 8
-Warning (10236): Verilog HDL Implicit Net warning at decoder_48.sv(9): created implicit net for "ndec3" File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/decoder_48.sv Line: 9
-Warning (10236): Verilog HDL Implicit Net warning at decoder_48.sv(19): created implicit net for "dec_out8" File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/decoder_48.sv Line: 19
+    Info (12023): Found entity 1: guffinOut_logic File: C:/Users/neilr/Desktop/Project_1/Quartus Files/guffinOut_logic.sv Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(37): created implicit net for "state0" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 37
+Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(37): created implicit net for "state1" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 37
+Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(37): created implicit net for "state2" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 37
+Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(37): created implicit net for "state3" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 37
+Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(38): created implicit net for "state4" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 38
+Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(38): created implicit net for "state5" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 38
+Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(38): created implicit net for "state6" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 38
+Warning (10236): Verilog HDL Implicit Net warning at d_ff.sv(8): created implicit net for "dff_nCLK" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/d_ff.sv Line: 8
+Warning (10236): Verilog HDL Implicit Net warning at d_ff.sv(11): created implicit net for "debug" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/d_ff.sv Line: 11
+Warning (10236): Verilog HDL Implicit Net warning at decoder_48.sv(6): created implicit net for "ndec0" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/decoder_48.sv Line: 6
+Warning (10236): Verilog HDL Implicit Net warning at decoder_48.sv(7): created implicit net for "ndec1" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/decoder_48.sv Line: 7
+Warning (10236): Verilog HDL Implicit Net warning at decoder_48.sv(8): created implicit net for "ndec2" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/decoder_48.sv Line: 8
+Warning (10236): Verilog HDL Implicit Net warning at decoder_48.sv(9): created implicit net for "ndec3" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/decoder_48.sv Line: 9
+Warning (10236): Verilog HDL Implicit Net warning at decoder_48.sv(19): created implicit net for "dec_out8" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/decoder_48.sv Line: 19
 Info (12127): Elaborating entity "fsmVend_toplevel" for the top level hierarchy
-Warning (10034): Output port "guffin" at fsmVend_toplevel.sv(3) has no driver File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/fsmVend_toplevel.sv Line: 3
-Warning (10034): Output port "quarter_out" at fsmVend_toplevel.sv(3) has no driver File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/fsmVend_toplevel.sv Line: 3
-Warning (10034): Output port "halfDollar_out" at fsmVend_toplevel.sv(3) has no driver File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/fsmVend_toplevel.sv Line: 3
-Warning (10034): Output port "state_high" at fsmVend_toplevel.sv(3) has no driver File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/fsmVend_toplevel.sv Line: 3
-Warning (10034): Output port "state_low" at fsmVend_toplevel.sv(4) has no driver File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/fsmVend_toplevel.sv Line: 4
-Info (12128): Elaborating entity "debouncer" for hierarchy "debouncer:clean" File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/fsmVend_toplevel.sv Line: 7
+Warning (10034): Output port "guffin" at fsmVend_toplevel.sv(3) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
+Warning (10034): Output port "quarter_out" at fsmVend_toplevel.sv(3) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
+Warning (10034): Output port "halfDollar_out" at fsmVend_toplevel.sv(3) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
+Warning (10034): Output port "state_high" at fsmVend_toplevel.sv(3) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
+Warning (10034): Output port "state_low" at fsmVend_toplevel.sv(3) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
+Warning (10034): Output port "hex0_a" at fsmVend_toplevel.sv(4) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 4
+Warning (10034): Output port "hex0_b" at fsmVend_toplevel.sv(4) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 4
+Warning (10034): Output port "hex0_c" at fsmVend_toplevel.sv(4) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 4
+Warning (10034): Output port "hex0_d" at fsmVend_toplevel.sv(4) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 4
+Warning (10034): Output port "hex0_e" at fsmVend_toplevel.sv(4) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 4
+Warning (10034): Output port "hex0_f" at fsmVend_toplevel.sv(4) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 4
+Warning (10034): Output port "hex0_g" at fsmVend_toplevel.sv(4) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 4
+Warning (10034): Output port "hex0_dec" at fsmVend_toplevel.sv(4) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 4
+Warning (10034): Output port "hex1_a" at fsmVend_toplevel.sv(5) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 5
+Warning (10034): Output port "hex1_b" at fsmVend_toplevel.sv(5) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 5
+Warning (10034): Output port "hex1_c" at fsmVend_toplevel.sv(5) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 5
+Warning (10034): Output port "hex1_d" at fsmVend_toplevel.sv(5) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 5
+Warning (10034): Output port "hex1_e" at fsmVend_toplevel.sv(5) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 5
+Warning (10034): Output port "hex1_f" at fsmVend_toplevel.sv(5) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 5
+Warning (10034): Output port "hex1_g" at fsmVend_toplevel.sv(5) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 5
+Warning (10034): Output port "hex1_dec" at fsmVend_toplevel.sv(5) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 5
+Warning (10034): Output port "hex2_a" at fsmVend_toplevel.sv(6) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 6
+Warning (10034): Output port "hex2_b" at fsmVend_toplevel.sv(6) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 6
+Warning (10034): Output port "hex2_c" at fsmVend_toplevel.sv(6) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 6
+Warning (10034): Output port "hex2_d" at fsmVend_toplevel.sv(6) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 6
+Warning (10034): Output port "hex2_e" at fsmVend_toplevel.sv(6) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 6
+Warning (10034): Output port "hex2_f" at fsmVend_toplevel.sv(6) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 6
+Warning (10034): Output port "hex2_g" at fsmVend_toplevel.sv(6) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 6
+Warning (10034): Output port "hex2_dec" at fsmVend_toplevel.sv(6) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 6
+Warning (10034): Output port "hex3_a" at fsmVend_toplevel.sv(7) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 7
+Warning (10034): Output port "hex3_b" at fsmVend_toplevel.sv(7) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 7
+Warning (10034): Output port "hex3_c" at fsmVend_toplevel.sv(7) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 7
+Warning (10034): Output port "hex3_d" at fsmVend_toplevel.sv(7) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 7
+Warning (10034): Output port "hex3_e" at fsmVend_toplevel.sv(7) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 7
+Warning (10034): Output port "hex3_f" at fsmVend_toplevel.sv(7) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 7
+Warning (10034): Output port "hex3_g" at fsmVend_toplevel.sv(7) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 7
+Warning (10034): Output port "hex3_dec" at fsmVend_toplevel.sv(7) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 7
+Warning (10034): Output port "hex4_a" at fsmVend_toplevel.sv(8) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 8
+Warning (10034): Output port "hex4_b" at fsmVend_toplevel.sv(8) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 8
+Warning (10034): Output port "hex4_c" at fsmVend_toplevel.sv(8) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 8
+Warning (10034): Output port "hex4_d" at fsmVend_toplevel.sv(8) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 8
+Warning (10034): Output port "hex4_e" at fsmVend_toplevel.sv(8) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 8
+Warning (10034): Output port "hex4_f" at fsmVend_toplevel.sv(8) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 8
+Warning (10034): Output port "hex4_g" at fsmVend_toplevel.sv(8) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 8
+Warning (10034): Output port "hex4_dec" at fsmVend_toplevel.sv(8) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 8
+Warning (10034): Output port "hex5_a" at fsmVend_toplevel.sv(9) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 9
+Warning (10034): Output port "hex5_b" at fsmVend_toplevel.sv(9) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 9
+Warning (10034): Output port "hex5_c" at fsmVend_toplevel.sv(9) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 9
+Warning (10034): Output port "hex5_d" at fsmVend_toplevel.sv(9) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 9
+Warning (10034): Output port "hex5_e" at fsmVend_toplevel.sv(9) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 9
+Warning (10034): Output port "hex5_f" at fsmVend_toplevel.sv(9) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 9
+Warning (10034): Output port "hex5_g" at fsmVend_toplevel.sv(9) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 9
+Warning (10034): Output port "hex5_dec" at fsmVend_toplevel.sv(10) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 10
+Info (12128): Elaborating entity "debouncer" for hierarchy "debouncer:clean" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 13
+Info (12128): Elaborating entity "statetoHex" for hierarchy "statetoHex:stateHex" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 44
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "guffin" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/fsmVend_toplevel.sv Line: 3
-    Warning (13410): Pin "quarter_out" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/fsmVend_toplevel.sv Line: 3
-    Warning (13410): Pin "halfDollar_out" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/fsmVend_toplevel.sv Line: 3
-    Warning (13410): Pin "state_high" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/fsmVend_toplevel.sv Line: 3
-    Warning (13410): Pin "state_low" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/fsmVend_toplevel.sv Line: 4
+    Warning (13410): Pin "guffin" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
+    Warning (13410): Pin "quarter_out" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
+    Warning (13410): Pin "halfDollar_out" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
+    Warning (13410): Pin "state_high" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
+    Warning (13410): Pin "state_low" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
+    Warning (13410): Pin "hex0_a" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 4
+    Warning (13410): Pin "hex0_b" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 4
+    Warning (13410): Pin "hex0_c" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 4
+    Warning (13410): Pin "hex0_d" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 4
+    Warning (13410): Pin "hex0_e" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 4
+    Warning (13410): Pin "hex0_f" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 4
+    Warning (13410): Pin "hex0_g" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 4
+    Warning (13410): Pin "hex0_dec" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 4
+    Warning (13410): Pin "hex1_a" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 5
+    Warning (13410): Pin "hex1_b" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 5
+    Warning (13410): Pin "hex1_c" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 5
+    Warning (13410): Pin "hex1_d" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 5
+    Warning (13410): Pin "hex1_e" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 5
+    Warning (13410): Pin "hex1_f" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 5
+    Warning (13410): Pin "hex1_g" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 5
+    Warning (13410): Pin "hex1_dec" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 5
+    Warning (13410): Pin "hex2_a" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 6
+    Warning (13410): Pin "hex2_b" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 6
+    Warning (13410): Pin "hex2_c" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 6
+    Warning (13410): Pin "hex2_d" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 6
+    Warning (13410): Pin "hex2_e" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 6
+    Warning (13410): Pin "hex2_f" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 6
+    Warning (13410): Pin "hex2_g" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 6
+    Warning (13410): Pin "hex2_dec" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 6
+    Warning (13410): Pin "hex3_a" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 7
+    Warning (13410): Pin "hex3_b" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 7
+    Warning (13410): Pin "hex3_c" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 7
+    Warning (13410): Pin "hex3_d" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 7
+    Warning (13410): Pin "hex3_e" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 7
+    Warning (13410): Pin "hex3_f" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 7
+    Warning (13410): Pin "hex3_g" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 7
+    Warning (13410): Pin "hex3_dec" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 7
+    Warning (13410): Pin "hex4_a" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 8
+    Warning (13410): Pin "hex4_b" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 8
+    Warning (13410): Pin "hex4_c" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 8
+    Warning (13410): Pin "hex4_d" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 8
+    Warning (13410): Pin "hex4_e" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 8
+    Warning (13410): Pin "hex4_f" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 8
+    Warning (13410): Pin "hex4_g" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 8
+    Warning (13410): Pin "hex4_dec" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 8
+    Warning (13410): Pin "hex5_a" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 9
+    Warning (13410): Pin "hex5_b" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 9
+    Warning (13410): Pin "hex5_c" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 9
+    Warning (13410): Pin "hex5_d" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 9
+    Warning (13410): Pin "hex5_e" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 9
+    Warning (13410): Pin "hex5_f" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 9
+    Warning (13410): Pin "hex5_g" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 9
+    Warning (13410): Pin "hex5_dec" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 10
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 6 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "key_CLK" File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/fsmVend_toplevel.sv Line: 2
-    Warning (15610): No output dependent on input pin "CLK" File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/fsmVend_toplevel.sv Line: 2
-    Warning (15610): No output dependent on input pin "RES" File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/fsmVend_toplevel.sv Line: 2
-    Warning (15610): No output dependent on input pin "quarter_in" File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/fsmVend_toplevel.sv Line: 2
-    Warning (15610): No output dependent on input pin "halfDollar_in" File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/fsmVend_toplevel.sv Line: 2
-    Warning (15610): No output dependent on input pin "dollar_in" File: C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/fsmVend_toplevel.sv Line: 2
-Info (21057): Implemented 11 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "key_CLK" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 2
+    Warning (15610): No output dependent on input pin "CLK" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 2
+    Warning (15610): No output dependent on input pin "RES" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 2
+    Warning (15610): No output dependent on input pin "quarter_in" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 2
+    Warning (15610): No output dependent on input pin "halfDollar_in" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 2
+    Warning (15610): No output dependent on input pin "dollar_in" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 2
+Info (21057): Implemented 59 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 5 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 26 warnings
+    Info (21059): Implemented 53 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 130 warnings
     Info: Peak virtual memory: 4742 megabytes
-    Info: Processing ended: Wed Oct 12 09:34:29 2022
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:32
+    Info: Processing ended: Thu Oct 13 08:56:42 2022
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:16
 
 
