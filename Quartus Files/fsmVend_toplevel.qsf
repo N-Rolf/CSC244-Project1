@@ -120,8 +120,8 @@ set_location_assignment PIN_N18 -to hex5_d
 set_location_assignment PIN_M20 -to hex5_e
 set_location_assignment PIN_N19 -to hex5_f
 set_location_assignment PIN_N20 -to hex5_g
-set_location_assignment PIN_A8 -to state_x
-set_location_assignment PIN_A9 -to state_y
+set_location_assignment PIN_A9 -to state_x
+set_location_assignment PIN_A8 -to state_y
 set_location_assignment PIN_A10 -to debug_0
 set_location_assignment PIN_B10 -to debug_1
 set_location_assignment PIN_D13 -to debug_2

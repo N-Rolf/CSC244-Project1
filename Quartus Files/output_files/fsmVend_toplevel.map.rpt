@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fsmVend_toplevel
-Thu Oct 13 10:33:43 2022
+Thu Oct 13 11:43:35 2022
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 Patches 1.02i SJ Lite Edition
 
 
@@ -13,18 +13,27 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 Patches 1.02i SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: debouncer:clean
- 10. Port Connectivity Checks: "sev_seg:hex4"
- 11. Port Connectivity Checks: "sev_seg:hex3"
- 12. Port Connectivity Checks: "sev_seg:hex1"
- 13. Port Connectivity Checks: "sev_seg:hex0"
- 14. Port Connectivity Checks: "next_state:nxtSt"
- 15. Port Connectivity Checks: "encoder_42:encode"
- 16. Port Connectivity Checks: "debouncer:clean"
- 17. Post-Synthesis Netlist Statistics for Top Partition
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: debouncer:clean
+ 12. Port Connectivity Checks: "sev_seg:hex4"
+ 13. Port Connectivity Checks: "sev_seg:hex3"
+ 14. Port Connectivity Checks: "sev_seg:hex1"
+ 15. Port Connectivity Checks: "sev_seg:hex0"
+ 16. Port Connectivity Checks: "state_register:state_reg|D_FF_neg:S6"
+ 17. Port Connectivity Checks: "state_register:state_reg|D_FF_neg:S5"
+ 18. Port Connectivity Checks: "state_register:state_reg|D_FF_neg:S4"
+ 19. Port Connectivity Checks: "state_register:state_reg|D_FF_neg:S3"
+ 20. Port Connectivity Checks: "state_register:state_reg|D_FF_neg:S2"
+ 21. Port Connectivity Checks: "state_register:state_reg|D_FF_neg:S1"
+ 22. Port Connectivity Checks: "state_register:state_reg|D_FF_neg:S0"
+ 23. Port Connectivity Checks: "state_register:state_reg"
+ 24. Port Connectivity Checks: "decoder_48:decode"
+ 25. Port Connectivity Checks: "encoder_42:encode"
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
 
 
 
@@ -51,13 +60,13 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                                   ;
 +------------------------------------+-----------------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Oct 13 10:33:43 2022                     ;
+; Analysis & Synthesis Status        ; Successful - Thu Oct 13 11:43:35 2022                     ;
 ; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 Patches 1.02i SJ Lite Edition ;
 ; Revision Name                      ; fsmVend_toplevel                                          ;
 ; Top-level Entity Name              ; fsmVend_toplevel                                          ;
 ; Family                             ; MAX 10                                                    ;
-; Total logic elements               ; 5                                                         ;
-;     Total combinational functions  ; 5                                                         ;
+; Total logic elements               ; 2                                                         ;
+;     Total combinational functions  ; 2                                                         ;
 ;     Dedicated logic registers      ; 0                                                         ;
 ; Total registers                    ; 0                                                         ;
 ; Total pins                         ; 63                                                        ;
@@ -181,8 +190,12 @@ https://fpgasoftware.intel.com/eula.
 ; debouncer.sv                     ; yes             ; User SystemVerilog HDL File        ; C:/Users/neilr/Desktop/Project_1/Quartus Files/debouncer.sv        ;         ;
 ; encoder_42.sv                    ; yes             ; User SystemVerilog HDL File        ; C:/Users/neilr/Desktop/Project_1/Quartus Files/encoder_42.sv       ;         ;
 ; sev_seg.sv                       ; yes             ; User SystemVerilog HDL File        ; C:/Users/neilr/Desktop/Project_1/Quartus Files/sev_seg.sv          ;         ;
+; state_register.sv                ; yes             ; User SystemVerilog HDL File        ; C:/Users/neilr/Desktop/Project_1/Quartus Files/state_register.sv   ;         ;
+; decoder_48.sv                    ; yes             ; User SystemVerilog HDL File        ; C:/Users/neilr/Desktop/Project_1/Quartus Files/decoder_48.sv       ;         ;
 ; statetoHex.sv                    ; yes             ; User SystemVerilog HDL File        ; C:/Users/neilr/Desktop/Project_1/Quartus Files/statetoHex.sv       ;         ;
 ; next_state.sv                    ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/neilr/Desktop/Project_1/Quartus Files/next_state.sv       ;         ;
+; d_ff_neg.sv                      ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/neilr/Desktop/Project_1/Quartus Files/d_ff_neg.sv         ;         ;
+; encoder_84.sv                    ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/neilr/Desktop/Project_1/Quartus Files/encoder_84.sv       ;         ;
 +----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+---------+
 
 
@@ -191,16 +204,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------------+
 ; Resource                                    ; Usage           ;
 +---------------------------------------------+-----------------+
-; Estimated Total logic elements              ; 5               ;
+; Estimated Total logic elements              ; 2               ;
 ;                                             ;                 ;
-; Total combinational functions               ; 5               ;
+; Total combinational functions               ; 2               ;
 ; Logic element usage by number of LUT inputs ;                 ;
 ;     -- 4 input functions                    ; 0               ;
-;     -- 3 input functions                    ; 3               ;
+;     -- 3 input functions                    ; 0               ;
 ;     -- <=2 input functions                  ; 2               ;
 ;                                             ;                 ;
 ; Logic elements by mode                      ;                 ;
-;     -- normal mode                          ; 5               ;
+;     -- normal mode                          ; 2               ;
 ;     -- arithmetic mode                      ; 0               ;
 ;                                             ;                 ;
 ; Total registers                             ; 0               ;
@@ -212,9 +225,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0               ;
 ;                                             ;                 ;
 ; Maximum fan-out node                        ; dollar_in~input ;
-; Maximum fan-out                             ; 5               ;
-; Total fan-out                               ; 81              ;
-; Average fan-out                             ; 0.62            ;
+; Maximum fan-out                             ; 2               ;
+; Total fan-out                               ; 69              ;
+; Average fan-out                             ; 0.54            ;
 +---------------------------------------------+-----------------+
 
 
@@ -223,11 +236,39 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                 ; Entity Name      ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------+------------------+--------------+
-; |fsmVend_toplevel          ; 5 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 63   ; 0            ; 0          ; |fsmVend_toplevel                   ; fsmVend_toplevel ; work         ;
+; |fsmVend_toplevel          ; 2 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 63   ; 0            ; 0          ; |fsmVend_toplevel                   ; fsmVend_toplevel ; work         ;
 ;    |encoder_42:encode|     ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fsmVend_toplevel|encoder_42:encode ; encoder_42       ; work         ;
-;    |next_state:nxtSt|      ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fsmVend_toplevel|next_state:nxtSt  ; next_state       ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                            ;
++----------------------------------------+--------------------------------------+
+; Register name                          ; Reason for Removal                   ;
++----------------------------------------+--------------------------------------+
+; state_register:state_reg|D_FF_neg:S6|Q ; Stuck at GND due to stuck port clear ;
+; state_register:state_reg|D_FF_neg:S5|Q ; Stuck at GND due to stuck port clear ;
+; state_register:state_reg|D_FF_neg:S4|Q ; Stuck at GND due to stuck port clear ;
+; state_register:state_reg|D_FF_neg:S3|Q ; Stuck at GND due to stuck port clear ;
+; state_register:state_reg|D_FF_neg:S2|Q ; Stuck at GND due to stuck port clear ;
+; state_register:state_reg|D_FF_neg:S1|Q ; Stuck at GND due to stuck port clear ;
+; state_register:state_reg|D_FF_neg:S0|Q ; Stuck at GND due to stuck port clear ;
+; debouncer:clean|COUNT[0]               ; Lost fanout                          ;
+; debouncer:clean|A                      ; Lost fanout                          ;
+; debouncer:clean|COUNT[1..15]           ; Lost fanout                          ;
+; Total Number of Removed Registers = 24 ;                                      ;
++----------------------------------------+--------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                               ;
++----------------------------------------+-------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal      ; Registers Removed due to This Register ;
++----------------------------------------+-------------------------+----------------------------------------+
+; state_register:state_reg|D_FF_neg:S6|Q ; Stuck at GND            ; debouncer:clean|A                      ;
+;                                        ; due to stuck port clear ;                                        ;
++----------------------------------------+-------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -291,15 +332,86 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------+
-; Port Connectivity Checks: "next_state:nxtSt"  ;
-+-------------+-------+----------+--------------+
-; Port        ; Type  ; Severity ; Details      ;
-+-------------+-------+----------+--------------+
-; currState_0 ; Input ; Info     ; Stuck at GND ;
-; currState_1 ; Input ; Info     ; Stuck at GND ;
-; currState_2 ; Input ; Info     ; Stuck at GND ;
-+-------------+-------+----------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "state_register:state_reg|D_FF_neg:S6"                                                                    ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Qb   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "state_register:state_reg|D_FF_neg:S5"                                                                    ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Qb   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "state_register:state_reg|D_FF_neg:S4"                                                                    ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Qb   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "state_register:state_reg|D_FF_neg:S3"                                                                    ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Qb   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "state_register:state_reg|D_FF_neg:S2"                                                                    ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Qb   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "state_register:state_reg|D_FF_neg:S1"                                                                    ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Qb   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "state_register:state_reg|D_FF_neg:S0"                                                                    ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Qb   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "state_register:state_reg"                                                                                                                   ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; RES  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decoder_48:decode"                                                                                                                               ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                      ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; dec4     ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; dec_out7 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -311,30 +423,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "debouncer:clean"                                                                    ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; A    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 63                          ;
-; cycloneiii_lcell_comb ; 12                          ;
-;     normal            ; 12                          ;
+; cycloneiii_lcell_comb ; 4                           ;
+;     normal            ; 4                           ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 5                           ;
 ;         2 data inputs ; 2                           ;
-;         3 data inputs ; 3                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.73                        ;
+; Max LUT depth         ; 1.00                        ;
+; Average LUT depth     ; 0.71                        ;
 +-----------------------+-----------------------------+
 
 
@@ -353,7 +454,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 Patches 1.02i SJ Lite Edition
-    Info: Processing started: Thu Oct 13 10:33:37 2022
+    Info: Processing started: Thu Oct 13 11:43:29 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fsmVend_toplevel -c fsmVend_toplevel
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -377,27 +478,16 @@ Info (12021): Found 1 design units, including 1 entities, in source file changet
     Info (12023): Found entity 1: changetoHex File: C:/Users/neilr/Desktop/Project_1/Quartus Files/changetoHex.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file guffinout_logic.sv
     Info (12023): Found entity 1: guffinOut_logic File: C:/Users/neilr/Desktop/Project_1/Quartus Files/guffinOut_logic.sv Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(20): created implicit net for "currState_0" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 20
-Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(21): created implicit net for "currState_1" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 21
-Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(22): created implicit net for "currState_2" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 22
+Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(24): created implicit net for "currState_0" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 24
+Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(24): created implicit net for "currState_1" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 24
+Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(24): created implicit net for "currState_2" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 24
 Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(25): created implicit net for "ns_0" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 25
 Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(25): created implicit net for "ns_1" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 25
 Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(25): created implicit net for "ns_2" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 25
 Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(25): created implicit net for "ns_3" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 25
-Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(53): created implicit net for "state0" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 53
-Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(53): created implicit net for "state1" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 53
-Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(53): created implicit net for "state2" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 53
-Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(53): created implicit net for "state3" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 53
-Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(54): created implicit net for "state4" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 54
-Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(54): created implicit net for "state5" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 54
-Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(54): created implicit net for "state6" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 54
 Warning (10236): Verilog HDL Implicit Net warning at d_ff.sv(8): created implicit net for "dff_nCLK" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/d_ff.sv Line: 8
 Warning (10236): Verilog HDL Implicit Net warning at d_ff.sv(11): created implicit net for "debug" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/d_ff.sv Line: 11
-Warning (10236): Verilog HDL Implicit Net warning at decoder_48.sv(6): created implicit net for "ndec0" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/decoder_48.sv Line: 6
-Warning (10236): Verilog HDL Implicit Net warning at decoder_48.sv(7): created implicit net for "ndec1" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/decoder_48.sv Line: 7
-Warning (10236): Verilog HDL Implicit Net warning at decoder_48.sv(8): created implicit net for "ndec2" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/decoder_48.sv Line: 8
-Warning (10236): Verilog HDL Implicit Net warning at decoder_48.sv(9): created implicit net for "ndec3" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/decoder_48.sv Line: 9
-Warning (10236): Verilog HDL Implicit Net warning at decoder_48.sv(19): created implicit net for "dec_out8" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/decoder_48.sv Line: 19
+Warning (10236): Verilog HDL Implicit Net warning at decoder_48.sv(14): created implicit net for "dec_out8" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/decoder_48.sv Line: 14
 Info (12127): Elaborating entity "fsmVend_toplevel" for the top level hierarchy
 Warning (10034): Output port "guffin" at fsmVend_toplevel.sv(3) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
 Warning (10034): Output port "quarter_out" at fsmVend_toplevel.sv(3) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
@@ -416,14 +506,25 @@ Warning (10236): Verilog HDL Implicit Net warning at next_state.sv(16): created 
 Warning (10236): Verilog HDL Implicit Net warning at next_state.sv(20): created implicit net for "and2_1" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/next_state.sv Line: 20
 Warning (10236): Verilog HDL Implicit Net warning at next_state.sv(21): created implicit net for "and2_2" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/next_state.sv Line: 21
 Info (12128): Elaborating entity "next_state" for hierarchy "next_state:nxtSt" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 25
-Info (12128): Elaborating entity "statetoHex" for hierarchy "statetoHex:stateHex" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 60
-Info (12128): Elaborating entity "sev_seg" for hierarchy "sev_seg:hex0" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 65
+Info (12128): Elaborating entity "decoder_48" for hierarchy "decoder_48:decode" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 30
+Info (12128): Elaborating entity "state_register" for hierarchy "state_register:state_reg" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 34
+Warning (12125): Using design file d_ff_neg.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: D_FF_neg File: C:/Users/neilr/Desktop/Project_1/Quartus Files/d_ff_neg.sv Line: 22
+Info (12128): Elaborating entity "D_FF_neg" for hierarchy "state_register:state_reg|D_FF_neg:S0" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/state_register.sv Line: 7
+Warning (12125): Using design file encoder_84.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: encoder_84 File: C:/Users/neilr/Desktop/Project_1/Quartus Files/encoder_84.sv Line: 1
+Info (12128): Elaborating entity "encoder_84" for hierarchy "encoder_84:encCurState" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 43
+Info (12128): Elaborating entity "statetoHex" for hierarchy "statetoHex:stateHex" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 66
+Info (12128): Elaborating entity "sev_seg" for hierarchy "sev_seg:hex0" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 71
 Warning (10034): Output port "dec" at sev_seg.sv(4) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/sev_seg.sv Line: 4
-Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 14 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "guffin" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
     Warning (13410): Pin "quarter_out" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
     Warning (13410): Pin "halfDollar_out" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
+    Warning (13410): Pin "debug_0" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
+    Warning (13410): Pin "debug_1" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
+    Warning (13410): Pin "debug_2" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
     Warning (13410): Pin "debug_3" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
     Warning (13410): Pin "hex0_a" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 4
     Warning (13410): Pin "hex0_b" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 4
@@ -474,20 +575,21 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "hex5_g" is stuck at VCC File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 9
     Warning (13410): Pin "hex5_dec" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 10
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 17 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "key_CLK" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 2
     Warning (15610): No output dependent on input pin "CLK" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 2
     Warning (15610): No output dependent on input pin "RES" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 2
-Info (21057): Implemented 68 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 65 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 57 output pins
-    Info (21061): Implemented 5 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 94 warnings
-    Info: Peak virtual memory: 4790 megabytes
-    Info: Processing ended: Thu Oct 13 10:33:43 2022
+    Info (21061): Implemented 2 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 88 warnings
+    Info: Peak virtual memory: 4786 megabytes
+    Info: Processing ended: Thu Oct 13 11:43:35 2022
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:15
+    Info: Total CPU time (on all processors): 00:00:16
 
 

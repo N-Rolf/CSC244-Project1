@@ -77,8 +77,8 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : A4        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : A5        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A6        :        :                   :         : 8         :                
 RES                          : A7        : input  : 2.5 V             :         : 7         : Y              
-state_x                      : A8        : output : 2.5 V             :         : 7         : Y              
-state_y                      : A9        : output : 2.5 V             :         : 7         : Y              
+state_y                      : A8        : output : 2.5 V             :         : 7         : Y              
+state_x                      : A9        : output : 2.5 V             :         : 7         : Y              
 debug_0                      : A10       : output : 2.5 V             :         : 7         : Y              
 halfDollar_out               : A11       : output : 2.5 V             :         : 7         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : A12       :        :                   :         : 7         :                
