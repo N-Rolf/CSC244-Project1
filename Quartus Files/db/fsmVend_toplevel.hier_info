@@ -1,19 +1,19 @@
 |fsmVend_toplevel
 key_CLK => key_CLK.IN1
 CLK => CLK.IN1
-RES => ~NO_FANOUT~
+RES => RES.IN1
 quarter_in => quarter_in.IN1
 halfDollar_in => halfDollar_in.IN1
 dollar_in => dollar_in.IN1
-guffin << <GND>
-quarter_out << <GND>
-halfDollar_out << <GND>
-state_x << state_x.DB_MAX_OUTPUT_PORT_TYPE
-state_y << state_y.DB_MAX_OUTPUT_PORT_TYPE
-debug_0 << state[0].DB_MAX_OUTPUT_PORT_TYPE
-debug_1 << state[1].DB_MAX_OUTPUT_PORT_TYPE
-debug_2 << state[2].DB_MAX_OUTPUT_PORT_TYPE
-debug_3 << state[3].DB_MAX_OUTPUT_PORT_TYPE
+guffin_out << guffinOut_logic:led_output.guffin
+quarter_out << guffinOut_logic:led_output.quarter
+halfDollar_out << guffinOut_logic:led_output.halfDollar
+state_x << guffinOut_logic:led_output.stateOut_0
+state_y << guffinOut_logic:led_output.stateOut_1
+debug_0 << <GND>
+debug_1 << <GND>
+debug_2 << <GND>
+debug_3 << <GND>
 hex0_a << sev_seg:hex0.a
 hex0_b << sev_seg:hex0.b
 hex0_c << sev_seg:hex0.c
@@ -295,6 +295,26 @@ state6 => WideOr2.IN2
 encState_0 <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 encState_1 <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 encState_2 <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fsmVend_toplevel|guffinOut_logic:led_output
+cState_0 => ~NO_FANOUT~
+cState_1 => ~NO_FANOUT~
+cState_2 => WideOr0.IN0
+cState_3 => WideOr0.IN1
+cState_3 => comb.IN0
+cState_4 => WideOr0.IN2
+cState_4 => WideOr1.IN0
+cState_5 => WideOr0.IN3
+cState_5 => comb.IN1
+cState_5 => WideOr1.IN1
+cState_6 => WideOr0.IN4
+cState_6 => WideOr1.IN2
+guffin <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+halfDollar <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+quarter <= comb.DB_MAX_OUTPUT_PORT_TYPE
+stateOut_0 <= <GND>
+stateOut_1 <= <GND>
 
 
 |fsmVend_toplevel|statetoHex:stateHex

@@ -4,15 +4,103 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "state_x",
+					"name" : "guffin_out",
 					"strict" : false
 				},
 				{
-					"name" : "state_y",
+					"name" : "quarter_out",
 					"strict" : false
 				},
 				{
-					"name" : "halfDollar_in",
+					"name" : "halfDollar_out",
+					"strict" : false
+				},
+				{
+					"name" : "hex0_b",
+					"strict" : false
+				},
+				{
+					"name" : "hex0_e",
+					"strict" : false
+				},
+				{
+					"name" : "hex0_g",
+					"strict" : false
+				},
+				{
+					"name" : "hex1_c",
+					"strict" : false
+				},
+				{
+					"name" : "hex1_d",
+					"strict" : false
+				},
+				{
+					"name" : "hex1_e",
+					"strict" : false
+				},
+				{
+					"name" : "hex1_f",
+					"strict" : false
+				},
+				{
+					"name" : "hex1_g",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_b",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_e",
+					"strict" : false
+				},
+				{
+					"name" : "hex3_g",
+					"strict" : false
+				},
+				{
+					"name" : "hex4_b",
+					"strict" : false
+				},
+				{
+					"name" : "hex4_c",
+					"strict" : false
+				},
+				{
+					"name" : "hex4_d",
+					"strict" : false
+				},
+				{
+					"name" : "hex4_e",
+					"strict" : false
+				},
+				{
+					"name" : "hex4_f",
+					"strict" : false
+				},
+				{
+					"name" : "hex4_g",
+					"strict" : false
+				},
+				{
+					"name" : "hex5_a",
+					"strict" : false
+				},
+				{
+					"name" : "hex5_d",
+					"strict" : false
+				},
+				{
+					"name" : "hex5_e",
+					"strict" : false
+				},
+				{
+					"name" : "hex5_f",
+					"strict" : false
+				},
+				{
+					"name" : "quarter_in",
 					"strict" : false
 				},
 				{
@@ -20,7 +108,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "quarter_in",
+					"name" : "halfDollar_in",
+					"strict" : false
+				},
+				{
+					"name" : "RES",
+					"strict" : false
+				},
+				{
+					"name" : "key_CLK",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
 					"strict" : false
 				}
 			]

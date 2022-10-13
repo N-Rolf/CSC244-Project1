@@ -1,14 +1,14 @@
-Fitter Status : Successful - Thu Oct 13 11:43:40 2022
-Quartus Prime Version : 21.1.1 Build 850 06/23/2022 Patches 1.02i SJ Lite Edition
+Fitter Status : Successful - Thu Oct 13 14:45:02 2022
+Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 Revision Name : fsmVend_toplevel
 Top-level Entity Name : fsmVend_toplevel
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 3 / 49,760 ( < 1 % )
-    Total combinational functions : 3 / 49,760 ( < 1 % )
-    Dedicated logic registers : 0 / 49,760 ( 0 % )
-Total registers : 0
+Total logic elements : 59 / 49,760 ( < 1 % )
+    Total combinational functions : 53 / 49,760 ( < 1 % )
+    Dedicated logic registers : 22 / 49,760 ( < 1 % )
+Total registers : 22
 Total pins : 63 / 360 ( 18 % )
 Total virtual pins : 0
 Total memory bits : 0 / 1,677,312 ( 0 % )

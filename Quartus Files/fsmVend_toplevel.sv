@@ -1,6 +1,6 @@
 module fsmVend_toplevel(
 	input logic key_CLK, CLK, RES, quarter_in, halfDollar_in, dollar_in,
-	output logic guffin, quarter_out, halfDollar_out, state_x, state_y, debug_0, debug_1, debug_2, debug_3,
+	output logic guffin_out, quarter_out, halfDollar_out, state_x, state_y, debug_0, debug_1, debug_2, debug_3,
 	output logic hex0_a, hex0_b, hex0_c, hex0_d, hex0_e, hex0_f, hex0_g, hex0_dec,
 				hex1_a, hex1_b, hex1_c, hex1_d, hex1_e, hex1_f, hex1_g, hex1_dec,
 				hex2_a, hex2_b, hex2_c, hex2_d, hex2_e, hex2_f, hex2_g, hex2_dec,
@@ -9,18 +9,13 @@ module fsmVend_toplevel(
 				hex5_a, hex5_b, hex5_c, hex5_d, hex5_e, hex5_f, hex5_g, hex5_dec
 );
 
-	logic CLK_clean, encoded_input0, encoded_input1, dec_NS[0:8], state[0:6];
+	logic CLK_clean, encoded_input0, encoded_input1, dec_NS[0:8], state[0:6], state_a, state_b;
 	debouncer clean (.A_noisy(key_CLK), .CLK50M(CLK), .A(CLK_clean));
 	
-	
 	encoder_42 encode (.enc1(quarter_in), .enc2(halfDollar_in), .enc3(dollar_in),
-					 .enc_out0(state_y), .enc_out1(state_x));
+					 .enc_out0(state_b), .enc_out1(state_a));
 	
-	
-	// assign currState_0 = 0;
-	// assign currState_1 = 0;
-	// assign currState_2 = 0;
-	next_state nxtSt (.encInput_X(state_x), .encInput_Y(state_y),
+	next_state nxtSt (.encInput_X(state_a), .encInput_Y(state_b),
 					.currState_0(currState_0), .currState_1(currState_1), .currState_2(currState_2),
 					.nextState_0(ns_0), .nextState_1(ns_1), .nextState_2(ns_2), .nextState_3(ns_3));
 	
@@ -30,19 +25,19 @@ module fsmVend_toplevel(
 					.dec_out4(dec_NS[4]), .dec_out5(dec_NS[5]), .dec_out6(dec_NS[6]));
 	
 	
-	state_register state_reg (.CLK(CLK_clean), .data0(dec_NS[0]), .data1(dec_NS[1]), .data2(dec_NS[2]), .data3(dec_NS[3]), .data4(dec_NS[4]), .data5(dec_NS[5]), .data6(dec_NS[6]),
+	state_register state_reg (.CLK(CLK_clean), .RES(RES), .data0(dec_NS[0]), .data1(dec_NS[1]), .data2(dec_NS[2]), .data3(dec_NS[3]), .data4(dec_NS[4]), .data5(dec_NS[5]), .data6(dec_NS[6]),
 								.state0(state[0]), .state1(state[1]), .state2(state[2]), .state3(state[3]), .state4(state[4]), .state5(state[5]), .state6(state[6]));
-	
-	assign debug_0 = state[0];
-	assign debug_1 = state[1];
-	assign debug_2 = state[2];
-	assign debug_3 = state[3];
+
 
 	//8:4 encoder
 	encoder_84 encCurState (.state0(state[0]), .state1(state[1]), .state2(state[2]), .state3(state[3]), .state4(state[4]), .state5(state[5]), .state6(state[6]),
 							.encState_0(currState_0), .encState_1(currState_1), .encState_2(currState_2));
 	
-	//guffinOut_logic output ();
+	//LED outputs
+	guffinOut_logic led_output (.cState_0(state[0]), .cState_1(state[1]), .cState_2(state[2]), .cState_3(state[3]),
+							.cState_4(state[4]), .cState_5(state[5]), .cState_6(state[6]), .guffin(guffin_out),
+							.quarter(quarter_out), .halfDollar(halfDollar_out),
+							.stateOut_0(state_x), .stateOut_1(state_y));  
 
 	//HEX logic STATE & CHANGE 
 	logic hex5_0, hex5_1, hex5_2, hex5_3,
