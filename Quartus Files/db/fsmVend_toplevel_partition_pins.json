@@ -16,6 +16,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "state_x",
+					"strict" : false
+				},
+				{
+					"name" : "state_y",
+					"strict" : false
+				},
+				{
 					"name" : "hex0_b",
 					"strict" : false
 				},

@@ -1,5 +1,5 @@
 Fitter report for fsmVend_toplevel
-Thu Oct 13 14:45:02 2022
+Thu Oct 13 15:01:09 2022
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -69,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Thu Oct 13 14:45:02 2022       ;
+; Fitter Status                      ; Successful - Thu Oct 13 15:01:09 2022       ;
 ; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                      ; fsmVend_toplevel                            ;
 ; Top-level Entity Name              ; fsmVend_toplevel                            ;
@@ -155,12 +155,12 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.01        ;
+; Average used               ; 1.02        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.5%      ;
+;     Processors 2-4         ;   0.6%      ;
 +----------------------------+-------------+
 
 
@@ -258,12 +258,12 @@ The pin-out file can be found in C:/Users/neilr/Desktop/Project_1/CSC244-Project
 ; Remote update blocks                        ; 0 / 1 ( 0 % )         ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )         ;
 ; Impedance control blocks                    ; 0 / 1 ( 0 % )         ;
-; Average interconnect usage (total/H/V)      ; 0.0% / 0.0% / 0.0%    ;
-; Peak interconnect usage (total/H/V)         ; 0.6% / 0.6% / 0.6%    ;
+; Average interconnect usage (total/H/V)      ; 0.1% / 0.1% / 0.1%    ;
+; Peak interconnect usage (total/H/V)         ; 0.7% / 0.7% / 0.7%    ;
 ; Maximum fan-out                             ; 17                    ;
 ; Highest non-global fan-out                  ; 17                    ;
-; Total fan-out                               ; 321                   ;
-; Average fan-out                             ; 1.44                  ;
+; Total fan-out                               ; 323                   ;
+; Average fan-out                             ; 1.45                  ;
 +---------------------------------------------+-----------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -313,8 +313,8 @@ The pin-out file can be found in C:/Users/neilr/Desktop/Project_1/CSC244-Project
 ;     -- Registered Output Connections        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 327                  ; 8                              ;
-;     -- Registered Connections               ; 85                   ; 0                              ;
+;     -- Total Connections                    ; 329                  ; 8                              ;
+;     -- Registered Connections               ; 86                   ; 0                              ;
 ;                                             ;                      ;                                ;
 ; External Connections                        ;                      ;                                ;
 ;     -- Top                                  ; 0                    ; 0                              ;
@@ -1104,7 +1104,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; hex5_f         ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; hex5_g         ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; hex5_dec       ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; quarter_in     ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
+; quarter_in     ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
 ; dollar_in      ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
 ; halfDollar_in  ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
 ; RES            ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
@@ -1119,12 +1119,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Source Pin / Fanout                           ; Pad To Core Index ; Setting ;
 +-----------------------------------------------+-------------------+---------+
 ; quarter_in                                    ;                   ;         ;
-;      - encoder_42:encode|enc_out0             ; 1                 ; 6       ;
-;      - next_state:nxtSt|WideOr1~4             ; 1                 ; 6       ;
-;      - next_state:nxtSt|nextState_2~4         ; 1                 ; 6       ;
-;      - decoder_48:decode|WideAnd4~5           ; 1                 ; 6       ;
-;      - decoder_48:decode|WideAnd4~16          ; 1                 ; 6       ;
-;      - decoder_48:decode|WideAnd4~31          ; 1                 ; 6       ;
+;      - encoder_42:encode|enc_out0             ; 0                 ; 6       ;
+;      - next_state:nxtSt|WideOr1~4             ; 0                 ; 6       ;
+;      - next_state:nxtSt|nextState_2~4         ; 0                 ; 6       ;
+;      - decoder_48:decode|WideAnd4~5           ; 0                 ; 6       ;
+;      - decoder_48:decode|WideAnd4~16          ; 0                 ; 6       ;
+;      - decoder_48:decode|WideAnd4~31          ; 0                 ; 6       ;
 ; dollar_in                                     ;                   ;         ;
 ;      - encoder_42:encode|enc_out0             ; 0                 ; 6       ;
 ;      - encoder_42:encode|enc_out1             ; 0                 ; 6       ;
@@ -1162,8 +1162,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; CLK                 ; PIN_P11            ; 17      ; Clock        ; yes    ; Global Clock         ; GCLK19           ; --                        ;
 ; RES                 ; PIN_A7             ; 5       ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; debouncer:clean|A   ; FF_X49_Y44_N23     ; 5       ; Clock        ; yes    ; Global Clock         ; GCLK14           ; --                        ;
-; debouncer:clean|t_r ; LCCOMB_X49_Y44_N26 ; 16      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; debouncer:clean|A   ; FF_X67_Y41_N15     ; 5       ; Clock        ; yes    ; Global Clock         ; GCLK5            ; --                        ;
+; debouncer:clean|t_r ; LCCOMB_X67_Y41_N12 ; 16      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
 +---------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1173,7 +1173,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name              ; Location       ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; CLK               ; PIN_P11        ; 17      ; 0                                    ; Global Clock         ; GCLK19           ; --                        ;
-; debouncer:clean|A ; FF_X49_Y44_N23 ; 5       ; 0                                    ; Global Clock         ; GCLK14           ; --                        ;
+; debouncer:clean|A ; FF_X67_Y41_N15 ; 5       ; 0                                    ; Global Clock         ; GCLK5            ; --                        ;
 +-------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -1182,15 +1182,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+------------------------+
 ; Routing Resource Type ; Usage                  ;
 +-----------------------+------------------------+
-; Block interconnects   ; 72 / 148,641 ( < 1 % ) ;
-; C16 interconnects     ; 5 / 5,382 ( < 1 % )    ;
-; C4 interconnects      ; 52 / 106,704 ( < 1 % ) ;
-; Direct links          ; 26 / 148,641 ( < 1 % ) ;
+; Block interconnects   ; 81 / 148,641 ( < 1 % ) ;
+; C16 interconnects     ; 9 / 5,382 ( < 1 % )    ;
+; C4 interconnects      ; 57 / 106,704 ( < 1 % ) ;
+; Direct links          ; 24 / 148,641 ( < 1 % ) ;
 ; Global clocks         ; 2 / 20 ( 10 % )        ;
-; Local interconnects   ; 41 / 49,760 ( < 1 % )  ;
+; Local interconnects   ; 39 / 49,760 ( < 1 % )  ;
 ; NSLEEPs               ; 0 / 500 ( 0 % )        ;
-; R24 interconnects     ; 7 / 5,406 ( < 1 % )    ;
-; R4 interconnects      ; 34 / 147,764 ( < 1 % ) ;
+; R24 interconnects     ; 9 / 5,406 ( < 1 % )    ;
+; R4 interconnects      ; 55 / 147,764 ( < 1 % ) ;
 +-----------------------+------------------------+
 
 
@@ -1248,13 +1248,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 11                                           ; 0                           ;
 ; 12                                           ; 0                           ;
 ; 13                                           ; 0                           ;
-; 14                                           ; 2                           ;
-; 15                                           ; 0                           ;
+; 14                                           ; 1                           ;
+; 15                                           ; 1                           ;
 ; 16                                           ; 0                           ;
 ; 17                                           ; 0                           ;
 ; 18                                           ; 0                           ;
-; 19                                           ; 0                           ;
-; 20                                           ; 1                           ;
+; 19                                           ; 1                           ;
+; 20                                           ; 0                           ;
 ; 21                                           ; 0                           ;
 ; 22                                           ; 0                           ;
 ; 23                                           ; 0                           ;
@@ -1299,9 +1299,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 5                                           ; 0                           ;
 ; 6                                           ; 0                           ;
 ; 7                                           ; 1                           ;
-; 8                                           ; 0                           ;
-; 9                                           ; 2                           ;
-; 10                                          ; 0                           ;
+; 8                                           ; 1                           ;
+; 9                                           ; 0                           ;
+; 10                                          ; 1                           ;
 ; 11                                          ; 0                           ;
 ; 12                                          ; 0                           ;
 ; 13                                          ; 0                           ;
@@ -1478,8 +1478,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
-; CLK             ; CLK                  ; 6.1               ;
-; CLK,I/O         ; CLK                  ; 5.1               ;
+; CLK             ; CLK                  ; 5.8               ;
+; CLK,I/O         ; CLK                  ; 5.4               ;
 +-----------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
@@ -1490,20 +1490,20 @@ This will disable optimization of problematic paths and expose them for further 
 +---------------------------+----------------------+-------------------+
 ; Source Register           ; Destination Register ; Delay Added in ns ;
 +---------------------------+----------------------+-------------------+
-; debouncer:clean|A         ; debouncer:clean|A    ; 4.935             ;
-; key_CLK                   ; debouncer:clean|A    ; 1.887             ;
-; debouncer:clean|COUNT[14] ; debouncer:clean|A    ; 1.887             ;
-; debouncer:clean|COUNT[13] ; debouncer:clean|A    ; 1.887             ;
-; debouncer:clean|COUNT[12] ; debouncer:clean|A    ; 1.887             ;
-; debouncer:clean|COUNT[11] ; debouncer:clean|A    ; 1.887             ;
-; debouncer:clean|COUNT[10] ; debouncer:clean|A    ; 1.887             ;
-; debouncer:clean|COUNT[9]  ; debouncer:clean|A    ; 1.887             ;
-; debouncer:clean|COUNT[8]  ; debouncer:clean|A    ; 1.887             ;
-; debouncer:clean|COUNT[7]  ; debouncer:clean|A    ; 1.887             ;
-; debouncer:clean|COUNT[6]  ; debouncer:clean|A    ; 1.887             ;
-; debouncer:clean|COUNT[5]  ; debouncer:clean|A    ; 1.887             ;
-; debouncer:clean|COUNT[15] ; debouncer:clean|A    ; 1.887             ;
-; debouncer:clean|COUNT[4]  ; debouncer:clean|A    ; 1.887             ;
+; debouncer:clean|A         ; debouncer:clean|A    ; 4.921             ;
+; key_CLK                   ; debouncer:clean|A    ; 1.964             ;
+; debouncer:clean|COUNT[14] ; debouncer:clean|A    ; 1.964             ;
+; debouncer:clean|COUNT[13] ; debouncer:clean|A    ; 1.964             ;
+; debouncer:clean|COUNT[12] ; debouncer:clean|A    ; 1.964             ;
+; debouncer:clean|COUNT[11] ; debouncer:clean|A    ; 1.964             ;
+; debouncer:clean|COUNT[10] ; debouncer:clean|A    ; 1.964             ;
+; debouncer:clean|COUNT[9]  ; debouncer:clean|A    ; 1.964             ;
+; debouncer:clean|COUNT[8]  ; debouncer:clean|A    ; 1.964             ;
+; debouncer:clean|COUNT[7]  ; debouncer:clean|A    ; 1.964             ;
+; debouncer:clean|COUNT[6]  ; debouncer:clean|A    ; 1.964             ;
+; debouncer:clean|COUNT[5]  ; debouncer:clean|A    ; 1.964             ;
+; debouncer:clean|COUNT[15] ; debouncer:clean|A    ; 1.964             ;
+; debouncer:clean|COUNT[4]  ; debouncer:clean|A    ; 1.964             ;
 +---------------------------+----------------------+-------------------+
 Note: This table only shows the top 14 path(s) that have the largest delay added for hold.
 
@@ -1578,20 +1578,20 @@ Info (176215): I/O bank details before I/O pin placement
         Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 4 total pin(s) used --  32 pins available
 Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "guffin" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:05
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:06
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X67_Y44 to location X78_Y54
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.58 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.53 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1600,10 +1600,10 @@ Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file C:/Users/neilr/Desktop/Project_1/CSC244-Project1/Quartus Files/output_files/fsmVend_toplevel.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 5640 megabytes
-    Info: Processing ended: Thu Oct 13 14:45:02 2022
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:20
+    Info: Peak virtual memory: 5639 megabytes
+    Info: Processing ended: Thu Oct 13 15:01:10 2022
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:19
 
 
 +----------------------------+
