@@ -77,9 +77,9 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : A4        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : A5        :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A6        :        :                   :         : 8         :                
 RES                          : A7        : input  : 2.5 V             :         : 7         : Y              
-state_low                    : A8        : output : 2.5 V             :         : 7         : Y              
-state_high                   : A9        : output : 2.5 V             :         : 7         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : A10       :        :                   :         : 7         :                
+state_x                      : A8        : output : 2.5 V             :         : 7         : Y              
+state_y                      : A9        : output : 2.5 V             :         : 7         : Y              
+debug_0                      : A10       : output : 2.5 V             :         : 7         : Y              
 halfDollar_out               : A11       : output : 2.5 V             :         : 7         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : A12       :        :                   :         : 7         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A13       :        :                   :         : 7         :                
@@ -145,7 +145,7 @@ GND                          : B6        : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : B7        :        :                   :         : 8         :                
 key_CLK                      : B8        : input  : 2.5 V             :         : 7         : Y              
 GND                          : B9        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B10       :        :                   :         : 7         :                
+debug_1                      : B10       : output : 2.5 V             :         : 7         : Y              
 guffin                       : B11       : output : 2.5 V             :         : 7         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : B12       :        :                   :         : 7         :                
 GND                          : B13       : gnd    :                   :         :           :                
@@ -170,7 +170,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : C9        :        :                   :      
 quarter_in                   : C10       : input  : 2.5 V             :         : 7         : Y              
 halfDollar_in                : C11       : input  : 2.5 V             :         : 7         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C12       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C13       :        :                   :         : 7         :                
+debug_3                      : C13       : output : 2.5 V             :         : 7         : Y              
 hex0_a                       : C14       : output : 2.5 V             :         : 7         : Y              
 hex0_c                       : C15       : output : 2.5 V             :         : 7         : Y              
 hex0_d                       : C16       : output : 2.5 V             :         : 7         : Y              
@@ -192,7 +192,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : D9        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : D10       :        :                   :         : 8         :                
 GND                          : D11       : gnd    :                   :         :           :                
 dollar_in                    : D12       : input  : 2.5 V             :         : 7         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : D13       :        :                   :         : 7         :                
+debug_2                      : D13       : output : 2.5 V             :         : 7         : Y              
 quarter_out                  : D14       : output : 2.5 V             :         : 7         : Y              
 hex0_dec                     : D15       : output : 2.5 V             :         : 7         : Y              
 GND                          : D16       : gnd    :                   :         :           :                
