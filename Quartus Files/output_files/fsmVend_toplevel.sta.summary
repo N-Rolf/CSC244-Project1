@@ -2,4 +2,76 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow 1200mV 85C Model Setup 'CLK'
+Slack : -3.678
+TNS   : -62.296
+
+Type  : Slow 1200mV 85C Model Setup 'debouncer:clean|A'
+Slack : -1.749
+TNS   : -6.394
+
+Type  : Slow 1200mV 85C Model Hold 'debouncer:clean|A'
+Slack : 0.363
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLK'
+Slack : 0.629
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -26.851
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debouncer:clean|A'
+Slack : -1.403
+TNS   : -7.015
+
+Type  : Slow 1200mV 0C Model Setup 'CLK'
+Slack : -3.368
+TNS   : -57.013
+
+Type  : Slow 1200mV 0C Model Setup 'debouncer:clean|A'
+Slack : -1.503
+TNS   : -5.416
+
+Type  : Slow 1200mV 0C Model Hold 'debouncer:clean|A'
+Slack : 0.328
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLK'
+Slack : 0.581
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -26.851
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debouncer:clean|A'
+Slack : -1.403
+TNS   : -7.015
+
+Type  : Fast 1200mV 0C Model Setup 'CLK'
+Slack : -1.040
+TNS   : -17.413
+
+Type  : Fast 1200mV 0C Model Setup 'debouncer:clean|A'
+Slack : -0.109
+TNS   : -0.217
+
+Type  : Fast 1200mV 0C Model Hold 'debouncer:clean|A'
+Slack : 0.155
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLK'
+Slack : 0.243
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -20.589
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debouncer:clean|A'
+Slack : -1.000
+TNS   : -5.000
+
 ------------------------------------------------------------
