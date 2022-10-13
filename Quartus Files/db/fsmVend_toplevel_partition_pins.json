@@ -12,19 +12,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "debug_0",
-					"strict" : false
-				},
-				{
-					"name" : "debug_1",
-					"strict" : false
-				},
-				{
-					"name" : "debug_2",
-					"strict" : false
-				},
-				{
-					"name" : "quarter_in",
+					"name" : "halfDollar_in",
 					"strict" : false
 				},
 				{
@@ -32,7 +20,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "halfDollar_in",
+					"name" : "quarter_in",
 					"strict" : false
 				}
 			]

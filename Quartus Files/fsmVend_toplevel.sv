@@ -9,36 +9,42 @@ module fsmVend_toplevel(
 				hex5_a, hex5_b, hex5_c, hex5_d, hex5_e, hex5_f, hex5_g, hex5_dec
 );
 
-	logic CLK_clean, encoded_input0, encoded_input1, dec_NS[0:8];
+	logic CLK_clean, encoded_input0, encoded_input1, dec_NS[0:8], state[0:6];
 	debouncer clean (.A_noisy(key_CLK), .CLK50M(CLK), .A(CLK_clean));
 	
-	//input -> 4:2 encoder
-	encoder_42 encode (.enc1(quarter_in), .enc2(halfDollar_in), .enc3(dollar_in),
-					 .enc_out0(state_x), .enc_out1(state_y));
 	
-	//4:2 encoded -> nextState Logic
-	assign currState_0 = 0;
-	assign currState_1 = 0;
-	assign currState_2 = 0;
+	encoder_42 encode (.enc1(quarter_in), .enc2(halfDollar_in), .enc3(dollar_in),
+					 .enc_out0(state_y), .enc_out1(state_x));
+	
+	
+	// assign currState_0 = 0;
+	// assign currState_1 = 0;
+	// assign currState_2 = 0;
 	next_state nxtSt (.encInput_X(state_x), .encInput_Y(state_y),
 					.currState_0(currState_0), .currState_1(currState_1), .currState_2(currState_2),
 					.nextState_0(ns_0), .nextState_1(ns_1), .nextState_2(ns_2), .nextState_3(ns_3));
 	
-	assign debug_0 = ns_0;
-	assign debug_1 = ns_1;
-	assign debug_2 = ns_2;
-	assign debug_3 = ns_3;
+	
+	decoder_48 decode (.dec0(ns_0), .dec1(ns_1), .dec2(ns_2), .dec3(ns_3),
+					.dec_out0(dec_NS[0]), .dec_out1(dec_NS[1]), .dec_out2(dec_NS[2]), .dec_out3(dec_NS[3]),
+					.dec_out4(dec_NS[4]), .dec_out5(dec_NS[5]), .dec_out6(dec_NS[6]));
+	
+	
+	state_register state_reg (.CLK(CLK_clean), .data0(dec_NS[0]), .data1(dec_NS[1]), .data2(dec_NS[2]), .data3(dec_NS[3]), .data4(dec_NS[4]), .data5(dec_NS[5]), .data6(dec_NS[6]),
+								.state0(state[0]), .state1(state[1]), .state2(state[2]), .state3(state[3]), .state4(state[4]), .state5(state[5]), .state6(state[6]));
+	
+	assign debug_0 = state[0];
+	assign debug_1 = state[1];
+	assign debug_2 = state[2];
+	assign debug_3 = state[3];
 
-	//nextState Logic -> 4:8 decoder
-	//decoder_48 decode (.dec0(nextState_0), .dec1(nextState_1), .dec2(nextState_2), .dec3(nextState_3), .dec_out0(dec_NS[0]), .dec_out1(dec_NS[1]), .dec_out2(dec_NS[2]), .dec_out3(dec_NS[3]), .dec_out4(dec_NS[4]), .dec_out5(dec_NS[5]), .dec_out6(dec_NS[6]));
+	//8:4 encoder
+	encoder_84 encCurState (.state0(state[0]), .state1(state[1]), .state2(state[2]), .state3(state[3]), .state4(state[4]), .state5(state[5]), .state6(state[6]),
+							.encState_0(currState_0), .encState_1(currState_1), .encState_2(currState_2));
 	
-	//4:8 decoder -> register
-	//state_register state_reg (.CLK(CLK_clean), .D0(dec_NS[0]), .D1(dec_NS[1]), .D2(dec_NS[2]), .D3(dec_NS[3]), .D4(dec_NS[4]), .D5(dec_NS[5]), .D6(dec_NS[6]));
-	
-	//register -> output logic
 	//guffinOut_logic output ();
 
-	//register -> HEX logic STATE & CHANGE 
+	//HEX logic STATE & CHANGE 
 	logic hex5_0, hex5_1, hex5_2, hex5_3,
 		 hex4_0, hex4_1, hex4_2, hex4_3,
 		 hex3_0, hex3_1, hex3_2, hex3_3,
@@ -50,8 +56,8 @@ module fsmVend_toplevel(
 	assign hex3_dec = 1;
 	assign hex4_dec = 1;
 
-	statetoHex stateHex (.stateIn_0(state0), .stateIn_1(state1), .stateIn_2(state2), .stateIn_3(state3),
-						 .stateIn_4(state4), .stateIn_5(state5), .stateIn_6(state6),
+	statetoHex stateHex (.stateIn_0(state[0]), .stateIn_1(state[1]), .stateIn_2(state[2]), .stateIn_3(state[3]),
+						 .stateIn_4(state[4]), .stateIn_5(state[5]), .stateIn_6(state[6]),
 						 .hex0_0(hex0_0), .hex0_1(hex0_1), .hex0_2(hex0_2), .hex0_3(hex0_3),
 						 .hex1_0(hex1_0), .hex1_1(hex1_1), .hex1_2(hex1_2), .hex1_3(hex1_3),
 						 .hex2_0(hex2_0), .hex2_1(hex2_1), .hex2_2(hex2_2), .hex2_3(hex2_3),

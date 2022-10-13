@@ -10,10 +10,10 @@ quarter_out << <GND>
 halfDollar_out << <GND>
 state_x << state_x.DB_MAX_OUTPUT_PORT_TYPE
 state_y << state_y.DB_MAX_OUTPUT_PORT_TYPE
-debug_0 << next_state:nxtSt.nextState_0
-debug_1 << next_state:nxtSt.nextState_1
-debug_2 << next_state:nxtSt.nextState_2
-debug_3 << next_state:nxtSt.nextState_3
+debug_0 << state[0].DB_MAX_OUTPUT_PORT_TYPE
+debug_1 << state[1].DB_MAX_OUTPUT_PORT_TYPE
+debug_2 << state[2].DB_MAX_OUTPUT_PORT_TYPE
+debug_3 << state[3].DB_MAX_OUTPUT_PORT_TYPE
 hex0_a << sev_seg:hex0.a
 hex0_b << sev_seg:hex0.b
 hex0_c << sev_seg:hex0.c
@@ -139,6 +139,162 @@ nextState_0 <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 nextState_1 <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 nextState_2 <= comb.DB_MAX_OUTPUT_PORT_TYPE
 nextState_3 <= <GND>
+
+
+|fsmVend_toplevel|decoder_48:decode
+dec0 => WideAnd1.IN0
+dec0 => WideAnd3.IN0
+dec0 => WideAnd5.IN0
+dec0 => WideAnd7.IN0
+dec0 => WideAnd0.IN0
+dec0 => WideAnd2.IN0
+dec0 => WideAnd4.IN0
+dec0 => WideAnd6.IN0
+dec1 => WideAnd2.IN1
+dec1 => WideAnd3.IN1
+dec1 => WideAnd6.IN1
+dec1 => WideAnd7.IN1
+dec1 => WideAnd0.IN1
+dec1 => WideAnd1.IN1
+dec1 => WideAnd4.IN1
+dec1 => WideAnd5.IN1
+dec2 => WideAnd4.IN2
+dec2 => WideAnd5.IN2
+dec2 => WideAnd6.IN2
+dec2 => WideAnd7.IN2
+dec2 => WideAnd0.IN2
+dec2 => WideAnd1.IN2
+dec2 => WideAnd2.IN2
+dec2 => WideAnd3.IN2
+dec3 => WideAnd0.IN3
+dec3 => WideAnd1.IN3
+dec3 => WideAnd2.IN3
+dec3 => WideAnd3.IN3
+dec3 => WideAnd4.IN3
+dec3 => WideAnd5.IN3
+dec3 => WideAnd6.IN3
+dec3 => WideAnd7.IN3
+dec4 => ~NO_FANOUT~
+dec_out0 <= WideAnd0.DB_MAX_OUTPUT_PORT_TYPE
+dec_out1 <= WideAnd1.DB_MAX_OUTPUT_PORT_TYPE
+dec_out2 <= WideAnd2.DB_MAX_OUTPUT_PORT_TYPE
+dec_out3 <= WideAnd3.DB_MAX_OUTPUT_PORT_TYPE
+dec_out4 <= WideAnd4.DB_MAX_OUTPUT_PORT_TYPE
+dec_out5 <= WideAnd5.DB_MAX_OUTPUT_PORT_TYPE
+dec_out6 <= WideAnd6.DB_MAX_OUTPUT_PORT_TYPE
+dec_out7 <= WideAnd7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fsmVend_toplevel|state_register:state_reg
+CLK => CLK.IN7
+RES => RES.IN7
+data0 => data0.IN1
+data1 => data1.IN1
+data2 => data2.IN1
+data3 => data3.IN1
+data4 => data4.IN1
+data5 => data5.IN1
+data6 => data6.IN1
+state0 <= D_FF_neg:S0.Q
+state1 <= D_FF_neg:S1.Q
+state2 <= D_FF_neg:S2.Q
+state3 <= D_FF_neg:S3.Q
+state4 <= D_FF_neg:S4.Q
+state5 <= D_FF_neg:S5.Q
+state6 <= D_FF_neg:S6.Q
+
+
+|fsmVend_toplevel|state_register:state_reg|D_FF_neg:S0
+D => Q~reg0.DATAIN
+D => Qb~reg0.DATAIN
+CLKb => Qb~reg0.CLK
+CLKb => Q~reg0.CLK
+RSTb => Qb~reg0.PRESET
+RSTb => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Qb <= Qb~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fsmVend_toplevel|state_register:state_reg|D_FF_neg:S1
+D => Q~reg0.DATAIN
+D => Qb~reg0.DATAIN
+CLKb => Qb~reg0.CLK
+CLKb => Q~reg0.CLK
+RSTb => Qb~reg0.PRESET
+RSTb => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Qb <= Qb~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fsmVend_toplevel|state_register:state_reg|D_FF_neg:S2
+D => Q~reg0.DATAIN
+D => Qb~reg0.DATAIN
+CLKb => Qb~reg0.CLK
+CLKb => Q~reg0.CLK
+RSTb => Qb~reg0.PRESET
+RSTb => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Qb <= Qb~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fsmVend_toplevel|state_register:state_reg|D_FF_neg:S3
+D => Q~reg0.DATAIN
+D => Qb~reg0.DATAIN
+CLKb => Qb~reg0.CLK
+CLKb => Q~reg0.CLK
+RSTb => Qb~reg0.PRESET
+RSTb => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Qb <= Qb~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fsmVend_toplevel|state_register:state_reg|D_FF_neg:S4
+D => Q~reg0.DATAIN
+D => Qb~reg0.DATAIN
+CLKb => Qb~reg0.CLK
+CLKb => Q~reg0.CLK
+RSTb => Qb~reg0.PRESET
+RSTb => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Qb <= Qb~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fsmVend_toplevel|state_register:state_reg|D_FF_neg:S5
+D => Q~reg0.DATAIN
+D => Qb~reg0.DATAIN
+CLKb => Qb~reg0.CLK
+CLKb => Q~reg0.CLK
+RSTb => Qb~reg0.PRESET
+RSTb => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Qb <= Qb~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fsmVend_toplevel|state_register:state_reg|D_FF_neg:S6
+D => Q~reg0.DATAIN
+D => Qb~reg0.DATAIN
+CLKb => Qb~reg0.CLK
+CLKb => Q~reg0.CLK
+RSTb => Qb~reg0.PRESET
+RSTb => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Qb <= Qb~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fsmVend_toplevel|encoder_84:encCurState
+state0 => ~NO_FANOUT~
+state1 => WideOr0.IN0
+state2 => WideOr1.IN0
+state3 => WideOr0.IN1
+state3 => WideOr1.IN1
+state4 => WideOr2.IN0
+state5 => WideOr0.IN2
+state5 => WideOr2.IN1
+state6 => WideOr1.IN2
+state6 => WideOr2.IN2
+encState_0 <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+encState_1 <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+encState_2 <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |fsmVend_toplevel|statetoHex:stateHex
