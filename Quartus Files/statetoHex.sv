@@ -7,32 +7,34 @@ module statetoHex (
 				 hex1_0, hex1_1, hex1_2, hex1_3,
 				 hex0_0, hex0_1, hex0_2, hex0_3
 );
-
+//state
+//hex 5 - $X.00
 	assign hex5_3 = 0;
 	assign hex5_0 = 0;
 	assign hex5_1 = 0;
 	or (hex5_2, stateIn_4, stateIn_5, stateIn_6); //the hex order here is cursed, don't touch
-	
+//hex 4 - $0.X0
 	assign hex4_3 = 0;
 	or (hex4_2, stateIn_2, stateIn_3, stateIn_6); 
 	or (hex4_1, stateIn_1, stateIn_3, stateIn_5);
 	or (hex4_0, stateIn_2, stateIn_3, stateIn_6); 
-
+//hex 3 - $0.0X
 	assign hex3_3 = 0;
 	or (hex3_2, stateIn_1, stateIn_3, stateIn_5); 
 	assign hex3_1 = 0;
 	or (hex3_0, stateIn_1, stateIn_3, stateIn_5); 
-
+//change
+//hex 2 - $X.00
 	assign hex2_3 = 0;
 	assign hex2_2 = 0;
 	assign hex2_1 = 0;
 	assign hex2_0 = 0;
-
+//hex 1 - $0.X0
 	assign hex1_3 = 0;
 	or (hex1_2, stateIn_5, stateIn_6);
 	or (hex1_1, stateIn_4, stateIn_6);
 	or (hex1_0, stateIn_5, stateIn_6);
-	
+//hax 0 - $0.0X
 	assign hex0_3 = 0;
 	or (hex0_2, stateIn_4, stateIn_6);
 	assign hex0_1 = 0;

@@ -16,11 +16,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "state_x",
+					"name" : "stateOut_0",
 					"strict" : false
 				},
 				{
-					"name" : "state_y",
+					"name" : "stateOut_1",
 					"strict" : false
 				},
 				{
@@ -112,15 +112,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "halfDollar_in",
+					"strict" : false
+				},
+				{
 					"name" : "quarter_in",
 					"strict" : false
 				},
 				{
 					"name" : "dollar_in",
-					"strict" : false
-				},
-				{
-					"name" : "halfDollar_in",
 					"strict" : false
 				},
 				{
