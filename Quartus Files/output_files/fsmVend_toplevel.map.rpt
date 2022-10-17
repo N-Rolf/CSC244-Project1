@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fsmVend_toplevel
-Mon Oct 17 12:07:35 2022
+Mon Oct 17 13:24:43 2022
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 Patches 1.02i SJ Lite Edition
 
 
@@ -57,16 +57,16 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                                   ;
 +------------------------------------+-----------------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Oct 17 12:07:35 2022                     ;
+; Analysis & Synthesis Status        ; Successful - Mon Oct 17 13:24:43 2022                     ;
 ; Quartus Prime Version              ; 21.1.1 Build 850 06/23/2022 Patches 1.02i SJ Lite Edition ;
 ; Revision Name                      ; fsmVend_toplevel                                          ;
 ; Top-level Entity Name              ; fsmVend_toplevel                                          ;
 ; Family                             ; MAX 10                                                    ;
-; Total logic elements               ; 55                                                        ;
-;     Total combinational functions  ; 55                                                        ;
+; Total logic elements               ; 49                                                        ;
+;     Total combinational functions  ; 49                                                        ;
 ;     Dedicated logic registers      ; 23                                                        ;
 ; Total registers                    ; 23                                                        ;
-; Total pins                         ; 63                                                        ;
+; Total pins                         ; 60                                                        ;
 ; Total virtual pins                 ; 0                                                         ;
 ; Total memory bits                  ; 0                                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                                         ;
@@ -198,36 +198,36 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                          ;
-+---------------------------------------------+----------------------------------------+
-; Resource                                    ; Usage                                  ;
-+---------------------------------------------+----------------------------------------+
-; Estimated Total logic elements              ; 55                                     ;
-;                                             ;                                        ;
-; Total combinational functions               ; 55                                     ;
-; Logic element usage by number of LUT inputs ;                                        ;
-;     -- 4 input functions                    ; 22                                     ;
-;     -- 3 input functions                    ; 14                                     ;
-;     -- <=2 input functions                  ; 19                                     ;
-;                                             ;                                        ;
-; Logic elements by mode                      ;                                        ;
-;     -- normal mode                          ; 40                                     ;
-;     -- arithmetic mode                      ; 15                                     ;
-;                                             ;                                        ;
-; Total registers                             ; 23                                     ;
-;     -- Dedicated logic registers            ; 23                                     ;
-;     -- I/O registers                        ; 0                                      ;
-;                                             ;                                        ;
-; I/O pins                                    ; 63                                     ;
-;                                             ;                                        ;
-; Embedded Multiplier 9-bit elements          ; 0                                      ;
-;                                             ;                                        ;
-; Maximum fan-out node                        ; state_register:state_reg|D_FF_neg:S6|Q ;
-; Maximum fan-out                             ; 17                                     ;
-; Total fan-out                               ; 325                                    ;
-; Average fan-out                             ; 1.59                                   ;
-+---------------------------------------------+----------------------------------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 49        ;
+;                                             ;           ;
+; Total combinational functions               ; 49        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 15        ;
+;     -- 3 input functions                    ; 16        ;
+;     -- <=2 input functions                  ; 18        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 34        ;
+;     -- arithmetic mode                      ; 15        ;
+;                                             ;           ;
+; Total registers                             ; 23        ;
+;     -- Dedicated logic registers            ; 23        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 60        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; CLK~input ;
+; Maximum fan-out                             ; 17        ;
+; Total fan-out                               ; 298       ;
+; Average fan-out                             ; 1.55      ;
++---------------------------------------------+-----------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -235,12 +235,13 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                    ; Entity Name      ; Library Name ;
 +---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------+------------------+--------------+
-; |fsmVend_toplevel               ; 55 (0)              ; 23 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 63   ; 0            ; 0          ; |fsmVend_toplevel                                      ; fsmVend_toplevel ; work         ;
+; |fsmVend_toplevel               ; 49 (0)              ; 23 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 60   ; 0            ; 0          ; |fsmVend_toplevel                                      ; fsmVend_toplevel ; work         ;
 ;    |debouncer:clean|            ; 23 (23)             ; 17 (17)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fsmVend_toplevel|debouncer:clean                      ; debouncer        ; work         ;
-;    |decoder_48:decode|          ; 17 (17)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fsmVend_toplevel|decoder_48:decode                    ; decoder_48       ; work         ;
-;    |guffinOut_logic:led_output| ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fsmVend_toplevel|guffinOut_logic:led_output           ; guffinOut_logic  ; work         ;
-;    |next_state:nxtSt|           ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fsmVend_toplevel|next_state:nxtSt                     ; next_state       ; work         ;
-;    |sev_seg:hex1|               ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fsmVend_toplevel|sev_seg:hex1                         ; sev_seg          ; work         ;
+;    |decoder_48:decode|          ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fsmVend_toplevel|decoder_48:decode                    ; decoder_48       ; work         ;
+;    |encoder_84:encCurState|     ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fsmVend_toplevel|encoder_84:encCurState               ; encoder_84       ; work         ;
+;    |guffinOut_logic:led_output| ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fsmVend_toplevel|guffinOut_logic:led_output           ; guffinOut_logic  ; work         ;
+;    |next_state:nxtSt|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fsmVend_toplevel|next_state:nxtSt                     ; next_state       ; work         ;
+;    |sev_seg:hex1|               ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fsmVend_toplevel|sev_seg:hex1                         ; sev_seg          ; work         ;
 ;    |sev_seg:hex4|               ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fsmVend_toplevel|sev_seg:hex4                         ; sev_seg          ; work         ;
 ;    |state_register:state_reg|   ; 0 (0)               ; 6 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fsmVend_toplevel|state_register:state_reg             ; state_register   ; work         ;
 ;       |D_FF_neg:S1|             ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fsmVend_toplevel|state_register:state_reg|D_FF_neg:S1 ; D_FF_neg         ; work         ;
@@ -249,7 +250,6 @@ https://fpgasoftware.intel.com/eula.
 ;       |D_FF_neg:S4|             ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fsmVend_toplevel|state_register:state_reg|D_FF_neg:S4 ; D_FF_neg         ; work         ;
 ;       |D_FF_neg:S5|             ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fsmVend_toplevel|state_register:state_reg|D_FF_neg:S5 ; D_FF_neg         ; work         ;
 ;       |D_FF_neg:S6|             ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fsmVend_toplevel|state_register:state_reg|D_FF_neg:S6 ; D_FF_neg         ; work         ;
-;    |statetoHex:stateHex|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |fsmVend_toplevel|statetoHex:stateHex                  ; statetoHex       ; work         ;
 +---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -402,23 +402,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 63                          ;
+; boundary_port         ; 60                          ;
 ; cycloneiii_ff         ; 23                          ;
 ;     CLR               ; 6                           ;
 ;     SCLR              ; 16                          ;
 ;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 66                          ;
+; cycloneiii_lcell_comb ; 60                          ;
 ;     arith             ; 15                          ;
 ;         2 data inputs ; 15                          ;
-;     normal            ; 51                          ;
+;     normal            ; 45                          ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 10                          ;
-;         2 data inputs ; 3                           ;
-;         3 data inputs ; 14                          ;
-;         4 data inputs ; 22                          ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 16                          ;
+;         4 data inputs ; 15                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.46                        ;
+; Average LUT depth     ; 2.62                        ;
 +-----------------------+-----------------------------+
 
 
@@ -437,7 +437,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 Patches 1.02i SJ Lite Edition
-    Info: Processing started: Mon Oct 17 12:07:29 2022
+    Info: Processing started: Mon Oct 17 13:24:37 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fsmVend_toplevel -c fsmVend_toplevel
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -445,8 +445,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file fsmvend
     Info (12023): Found entity 1: fsmVend_toplevel File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file debouncer.sv
     Info (12023): Found entity 1: debouncer File: C:/Users/neilr/Desktop/Project_1/Quartus Files/debouncer.sv Line: 15
-Info (12021): Found 1 design units, including 1 entities, in source file d_ff.sv
-    Info (12023): Found entity 1: d_ff File: C:/Users/neilr/Desktop/Project_1/Quartus Files/d_ff.sv Line: 1
+Warning (12019): Can't analyze file -- file d_ff.sv is missing
 Info (12021): Found 1 design units, including 1 entities, in source file encoder_42.sv
     Info (12023): Found entity 1: encoder_42 File: C:/Users/neilr/Desktop/Project_1/Quartus Files/encoder_42.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file sev_seg.sv
@@ -457,27 +456,23 @@ Info (12021): Found 1 design units, including 1 entities, in source file decoder
     Info (12023): Found entity 1: decoder_48 File: C:/Users/neilr/Desktop/Project_1/Quartus Files/decoder_48.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file statetohex.sv
     Info (12023): Found entity 1: statetoHex File: C:/Users/neilr/Desktop/Project_1/Quartus Files/statetoHex.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file changetohex.sv
-    Info (12023): Found entity 1: changetoHex File: C:/Users/neilr/Desktop/Project_1/Quartus Files/changetoHex.sv Line: 1
+Warning (12019): Can't analyze file -- file changetoHex.sv is missing
 Info (12021): Found 1 design units, including 1 entities, in source file guffinout_logic.sv
     Info (12023): Found entity 1: guffinOut_logic File: C:/Users/neilr/Desktop/Project_1/Quartus Files/guffinOut_logic.sv Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(19): created implicit net for "currState_0" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 19
-Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(19): created implicit net for "currState_1" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 19
-Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(19): created implicit net for "currState_2" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 19
-Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(20): created implicit net for "ns_0" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 20
-Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(20): created implicit net for "ns_1" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 20
-Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(20): created implicit net for "ns_2" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 20
-Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(20): created implicit net for "ns_3" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 20
-Warning (10236): Verilog HDL Implicit Net warning at d_ff.sv(8): created implicit net for "dff_nCLK" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/d_ff.sv Line: 8
-Warning (10236): Verilog HDL Implicit Net warning at d_ff.sv(11): created implicit net for "debug" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/d_ff.sv Line: 11
+Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(23): created implicit net for "currState_0" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 23
+Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(23): created implicit net for "currState_1" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 23
+Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(23): created implicit net for "currState_2" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 23
+Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(24): created implicit net for "ns_0" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 24
+Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(24): created implicit net for "ns_1" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 24
+Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(24): created implicit net for "ns_2" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 24
+Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(24): created implicit net for "ns_3" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 24
+Warning (10236): Verilog HDL Implicit Net warning at fsmVend_toplevel.sv(43): created implicit net for "stateOut_2" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 43
 Warning (10236): Verilog HDL Implicit Net warning at decoder_48.sv(14): created implicit net for "dec_out8" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/decoder_48.sv Line: 14
 Info (12127): Elaborating entity "fsmVend_toplevel" for the top level hierarchy
-Warning (10034): Output port "debug_0" at fsmVend_toplevel.sv(3) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
-Warning (10034): Output port "debug_1" at fsmVend_toplevel.sv(3) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
-Warning (10034): Output port "debug_2" at fsmVend_toplevel.sv(3) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
-Warning (10034): Output port "debug_3" at fsmVend_toplevel.sv(3) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
-Info (12128): Elaborating entity "debouncer" for hierarchy "debouncer:clean" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 13
-Info (12128): Elaborating entity "encoder_42" for hierarchy "encoder_42:encode" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 16
+Warning (10036): Verilog HDL or VHDL warning at fsmVend_toplevel.sv(43): object "stateOut_2" assigned a value but never read File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 43
+Warning (10034): Output port "stateOut_3" at fsmVend_toplevel.sv(3) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
+Info (12128): Elaborating entity "debouncer" for hierarchy "debouncer:clean" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 15
+Info (12128): Elaborating entity "encoder_42" for hierarchy "encoder_42:encode" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 19
 Warning (12125): Using design file next_state.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: next_state File: C:/Users/neilr/Desktop/Project_1/Quartus Files/next_state.sv Line: 1
 Warning (10236): Verilog HDL Implicit Net warning at next_state.sv(7): created implicit net for "and0_1" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/next_state.sv Line: 7
@@ -489,25 +484,22 @@ Warning (10236): Verilog HDL Implicit Net warning at next_state.sv(15): created 
 Warning (10236): Verilog HDL Implicit Net warning at next_state.sv(16): created implicit net for "and1_4" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/next_state.sv Line: 16
 Warning (10236): Verilog HDL Implicit Net warning at next_state.sv(20): created implicit net for "and2_1" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/next_state.sv Line: 20
 Warning (10236): Verilog HDL Implicit Net warning at next_state.sv(21): created implicit net for "and2_2" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/next_state.sv Line: 21
-Info (12128): Elaborating entity "next_state" for hierarchy "next_state:nxtSt" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 20
-Info (12128): Elaborating entity "decoder_48" for hierarchy "decoder_48:decode" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 25
-Info (12128): Elaborating entity "state_register" for hierarchy "state_register:state_reg" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 29
+Info (12128): Elaborating entity "next_state" for hierarchy "next_state:nxtSt" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 24
+Info (12128): Elaborating entity "decoder_48" for hierarchy "decoder_48:decode" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 29
+Info (12128): Elaborating entity "state_register" for hierarchy "state_register:state_reg" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 33
 Warning (12125): Using design file d_ff_neg.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: D_FF_neg File: C:/Users/neilr/Desktop/Project_1/Quartus Files/d_ff_neg.sv Line: 22
 Info (12128): Elaborating entity "D_FF_neg" for hierarchy "state_register:state_reg|D_FF_neg:S0" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/state_register.sv Line: 7
 Warning (12125): Using design file encoder_84.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: encoder_84 File: C:/Users/neilr/Desktop/Project_1/Quartus Files/encoder_84.sv Line: 1
-Info (12128): Elaborating entity "encoder_84" for hierarchy "encoder_84:encCurState" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 34
-Info (12128): Elaborating entity "guffinOut_logic" for hierarchy "guffinOut_logic:led_output" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 40
-Info (12128): Elaborating entity "statetoHex" for hierarchy "statetoHex:stateHex" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 61
-Info (12128): Elaborating entity "sev_seg" for hierarchy "sev_seg:hex0" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 66
+Info (12128): Elaborating entity "encoder_84" for hierarchy "encoder_84:encCurState" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 38
+Info (12128): Elaborating entity "guffinOut_logic" for hierarchy "guffinOut_logic:led_output" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 48
+Info (12128): Elaborating entity "statetoHex" for hierarchy "statetoHex:stateHex" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 69
+Info (12128): Elaborating entity "sev_seg" for hierarchy "sev_seg:hex0" File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 75
 Warning (10034): Output port "dec" at sev_seg.sv(4) has no driver File: C:/Users/neilr/Desktop/Project_1/Quartus Files/sev_seg.sv Line: 4
 Warning (12241): 13 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "debug_0" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
-    Warning (13410): Pin "debug_1" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
-    Warning (13410): Pin "debug_2" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
-    Warning (13410): Pin "debug_3" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
+    Warning (13410): Pin "stateOut_3" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 3
     Warning (13410): Pin "hex0_a" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 4
     Warning (13410): Pin "hex0_c" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 4
     Warning (13410): Pin "hex0_d" is stuck at GND File: C:/Users/neilr/Desktop/Project_1/Quartus Files/fsmVend_toplevel.sv Line: 4
@@ -537,13 +529,13 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 118 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 109 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 57 output pins
-    Info (21061): Implemented 55 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 60 warnings
-    Info: Peak virtual memory: 4846 megabytes
-    Info: Processing ended: Mon Oct 17 12:07:35 2022
+    Info (21059): Implemented 54 output pins
+    Info (21061): Implemented 49 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 56 warnings
+    Info: Peak virtual memory: 4842 megabytes
+    Info: Processing ended: Mon Oct 17 13:24:43 2022
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:15
 

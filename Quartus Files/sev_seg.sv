@@ -10,7 +10,7 @@ module sev_seg(
 	not(nhexIn_2, hexIn_2);
 	not(nhexIn_3, hexIn_3);
 
-	//decoder block a
+	//decoder block
 	and(y[0],nhexIn_3,nhexIn_0,nhexIn_1,nhexIn_2);		//0000 
 	and(y[1],nhexIn_3,nhexIn_0,nhexIn_1,hexIn_2);		//0001 
 	and(y[2],nhexIn_3,nhexIn_0,hexIn_1,nhexIn_2);		//0010 

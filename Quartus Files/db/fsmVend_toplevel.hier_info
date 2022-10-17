@@ -8,12 +8,9 @@ dollar_in => dollar_in.IN1
 guffin_out << guffinOut_logic:led_output.guffin
 quarter_out << guffinOut_logic:led_output.quarter
 halfDollar_out << guffinOut_logic:led_output.halfDollar
-state_x << guffinOut_logic:led_output.stateOut_0
-state_y << guffinOut_logic:led_output.stateOut_1
-debug_0 << <GND>
-debug_1 << <GND>
-debug_2 << <GND>
-debug_3 << <GND>
+stateOut_0 << currState_0.DB_MAX_OUTPUT_PORT_TYPE
+stateOut_1 << currState_1.DB_MAX_OUTPUT_PORT_TYPE
+stateOut_3 << <GND>
 hex0_a << sev_seg:hex0.a
 hex0_b << sev_seg:hex0.b
 hex0_c << sev_seg:hex0.c
@@ -303,23 +300,16 @@ cState_0 => ~NO_FANOUT~
 cState_1 => ~NO_FANOUT~
 cState_2 => ~NO_FANOUT~
 cState_3 => WideOr0.IN0
-cState_3 => comb.IN0
 cState_4 => WideOr0.IN1
 cState_4 => comb.IN0
-cState_4 => WideOr1.IN0
 cState_5 => WideOr0.IN2
 cState_5 => comb.IN0
-cState_5 => comb.IN1
-cState_5 => WideOr1.IN1
 cState_6 => WideOr0.IN3
 cState_6 => comb.IN1
 cState_6 => comb.IN1
-cState_6 => WideOr1.IN2
 guffin <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 halfDollar <= comb.DB_MAX_OUTPUT_PORT_TYPE
 quarter <= comb.DB_MAX_OUTPUT_PORT_TYPE
-stateOut_0 <= comb.DB_MAX_OUTPUT_PORT_TYPE
-stateOut_1 <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |fsmVend_toplevel|statetoHex:stateHex
