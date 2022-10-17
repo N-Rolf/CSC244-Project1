@@ -36,6 +36,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "hex1_b",
+					"strict" : false
+				},
+				{
 					"name" : "hex1_c",
 					"strict" : false
 				},
