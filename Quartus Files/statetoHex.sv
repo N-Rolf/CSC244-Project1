@@ -7,7 +7,7 @@ module statetoHex (
 				 hex1_0, hex1_1, hex1_2, hex1_3,
 				 hex0_0, hex0_1, hex0_2, hex0_3
 );
-//state
+//7 states encoded to 4 bits for each 7-segment display
 //hex 5 - $X.00
 	assign hex5_3 = 0;
 	assign hex5_0 = 0;
